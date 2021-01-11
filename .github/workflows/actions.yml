@@ -13,3 +13,10 @@ jobs:
           who-to-greet: Sayantan
       - name: log time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: print env variables
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
